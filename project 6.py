@@ -3,14 +3,7 @@ l2 = [5]
 l3 = []
 l4 = [30, 5, 7, 15, 40]
 
-if l == []:
-    l.append(111)
-elif l2 == []:
-    l2.append(111)
-elif l3 == []:
-    l3.append(111)
-elif l4 == []:
-    l4.append(111)
+l3.append(1)
 
 x1 = l.pop(-1)
 x2 = l2.pop(-1)
@@ -22,14 +15,7 @@ l2.insert(0, x2)
 l3.insert(0, x3)
 l4.insert(0, x4)
 
-if l == [111]:
-    l.remove(111)
-elif l2 == [111]:
-    l2.remove(111)
-elif l3 == [111]:
-    l3.remove(111)
-elif l4 == [111]:
-    l4.remove(111)
+del l3[-1]
 
 print(l)
 print(l2)
