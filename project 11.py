@@ -1,7 +1,9 @@
 import keyword
+import string
 
 user_input = str(input("Введіть ім'я змінної:"))
 lst1 = user_input.split(" ")
+low = user_input.islower()
 
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
@@ -11,57 +13,78 @@ punctuation0 =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",
 
 punctuation2 = ["__", "___", "____", "_____"]
 
-for space in user_input:
-    if space == " ":
-        print(False)
-        break
-    elif space == "":
-        print(False)
-        break
-    else:
-        break
-####################################
-for char in user_input: # string.punctuation "Не беремо виняток: '_'"
-    if char in punctuation0:
-        print(False)
-        break
-    else:
-        continue
-####################################
-for punctuation1 in lst1: # "'__', '___', '____', '_____'"
-    if punctuation1 in punctuation2:
-        print(False)
-        break
-    else:
-        continue
-####################################
-for keyword1 in lst1: #keyword.kwlist
-    if keyword1 in keyword.kwlist:
-        print(False)
-        break
-    elif keyword1 == "match":
-        print(False)
-        break
-    elif keyword1 == "type":
-        print(False)
-        break
-    else:
-        continue
-####################################
-for number in lst1: # numbers
-    if number[0] in numbers:
-        print(False)
-        break
-    else:
-        break
-####################################
-low = user_input.lower()
-
-user_input2 = "".join(user_input)
-for letter in user_input:
-    if not low == letter:
-        print(False)
-        break
-    else:
+stop = 1
+while True:
+    if stop == 30:
         print(True)
         break
+    elif stop > 90:
+        break
+    for char in user_input:
+        if char == " ":
+            print(False , 1)
+            stop = stop + 90
+            break
+        elif char in punctuation0: # string.punctuation "Не беремо виняток: '_'"
+            print(False, 3)
+            stop = stop + 90
+            break
+        elif stop == 30:
+            break
+        elif stop > 90:
+            break
+####################################################
+    for char1 in lst1:  # "'__', '___', '____', '_____'"
+        if char1 in punctuation2:
+            print(False, 4)
+            stop = stop + 90
+            break
+####################################################
+        elif char1 in keyword.kwlist:#keyword.kwlist
+            print(False, 5)
+            stop = stop + 90
+            break
+        elif char1 == "match":
+            print(False, 6)
+            stop = stop + 90
+            break
+        elif char1 == "type":
+            print(False, 7)
+            stop = stop + 90
+            break
+####################################################
+        elif char1[0] in numbers: # numbers
+            print(False, 8)
+            stop = stop + 90
+            break
+        elif stop == 30:
+                break
+        elif stop > 90:
+                break
+####################################################
+    for letter in user_input:
+        if letter in string.ascii_uppercase:  # Перевірка регістру
+            print(False, 10)
+            stop = stop + 90
+            break
+        elif stop > 90:
+            break
+        elif stop == 30:
+            break
+        else:
+            stop = stop + 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
