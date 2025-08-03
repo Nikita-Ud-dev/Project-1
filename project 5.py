@@ -14,8 +14,3 @@ elif user_inputX == "/":
     print(ex, user_input1 / user_input2)
 else:
     print("Перевірте введенні данні та спробуйте ще раз.")
-
-
-
-
-
